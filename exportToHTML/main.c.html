@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>main.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #cc7832;}
+.s4 { color: #808080;}
+.s5 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.c</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;stdio.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;stdlib.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;time.h&gt;</span>
+
+<span class="s3">int </span><span class="s1">main() {</span>
+    <span class="s4">//declare an int named val, and print it</span>
+    <span class="s3">int </span><span class="s1">val = </span><span class="s5">10</span><span class="s3">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;%d</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s3">, </span><span class="s1">val)</span><span class="s3">;</span>
+
+    <span class="s4">//declare a string in main called name and initialize it to your name.</span>
+    <span class="s4">//print the string forward and backward</span>
+
+    <span class="s3">char </span><span class="s1">name[</span><span class="s5">8</span><span class="s1">] = </span><span class="s2">&quot;Miranda&quot;</span><span class="s3">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;%s</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s3">, </span><span class="s1">name)</span><span class="s3">;</span>
+
+    <span class="s4">//guessing game</span>
+    <span class="s3">int </span><span class="s1">guess1</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">guess2</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">number1</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">number2</span><span class="s3">;</span>
+
+    <span class="s4">//generate two random numbers between 1-10</span>
+    <span class="s1">srand(time(NULL))</span><span class="s3">;</span>
+    <span class="s1">number1 = rand() % </span><span class="s5">11</span><span class="s3">;</span>
+    <span class="s1">number2 = rand() % </span><span class="s5">11</span><span class="s3">;</span>
+
+    <span class="s1">printf(</span><span class="s2">&quot;%d</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s3">, </span><span class="s1">number1)</span><span class="s3">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;%d</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s3">, </span><span class="s1">number2)</span><span class="s3">;</span>
+
+    <span class="s1">printf(</span><span class="s2">&quot;Enter two guesses: &quot;</span><span class="s1">)</span><span class="s3">;</span>
+    <span class="s1">scanf(</span><span class="s2">&quot;%d&quot;</span><span class="s3">, </span><span class="s1">&amp;guess1)</span><span class="s3">;</span>
+    <span class="s1">scanf(</span><span class="s2">&quot;%d&quot;</span><span class="s3">, </span><span class="s1">&amp;guess2)</span><span class="s3">;</span>
+
+
+    <span class="s3">if </span><span class="s1">((guess1 == number1) &amp;&amp; (guess2 == number2)) {</span>
+        <span class="s1">printf(</span><span class="s2">&quot;You guessed both numbers in correct order, 100 points&quot;</span><span class="s1">)</span><span class="s3">;</span>
+    <span class="s1">} </span><span class="s3">else if </span><span class="s1">((guess2 == number1) &amp;&amp; (guess1 == number2)) {</span>
+        <span class="s1">printf(</span><span class="s2">&quot;You guessed both correctly in the opposite order, 50 points&quot;</span><span class="s1">)</span><span class="s3">;</span>
+    <span class="s1">} </span><span class="s3">else if </span><span class="s1">((guess1 == number1) || (guess2 == number2)) {</span>
+        <span class="s1">printf(</span><span class="s2">&quot;You guessed one of the numbers in the correct order, 25 points&quot;</span><span class="s1">)</span><span class="s3">;</span>
+    <span class="s1">} </span><span class="s3">else if </span><span class="s1">((guess1 == number2) || (guess2 == number1)) {</span>
+        <span class="s1">printf(</span><span class="s2">&quot;You guessed one of the numbers, but in the wrong order. 10 points.&quot;</span><span class="s1">)</span><span class="s3">;</span>
+    <span class="s1">} </span><span class="s3">else </span><span class="s1">{</span>
+        <span class="s1">printf(</span><span class="s2">&quot;You suck at guessing. 0 points.&quot;</span><span class="s1">)</span><span class="s3">;</span>
+    <span class="s1">}</span>
+    <span class="s3">return </span><span class="s5">0</span><span class="s3">;</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
